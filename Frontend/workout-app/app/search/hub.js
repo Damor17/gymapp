@@ -30,10 +30,8 @@ const SearchPage = () => {
                 }}
                 />
 
-            <ScrollView showsVerticalScrollIndicator={false}>
-                <Searcher/>
+            <Searcher/>
 
-            </ScrollView>
 
             <Footer user={user} />
 

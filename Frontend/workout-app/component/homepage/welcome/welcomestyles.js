@@ -13,7 +13,7 @@ const styles = StyleSheet.create({
   },
   welcomeMessage: {
     fontFamily: FONT.bold,
-    fontSize: SIZES.xLarge,
+    fontSize: 18, 
     color: COLORS.primary,
     marginTop: 2,
   },

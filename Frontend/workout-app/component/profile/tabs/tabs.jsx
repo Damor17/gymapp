@@ -14,7 +14,7 @@ const Tabs = ({user}) => {
                 <View style={styles.twoContainer}>
                 <Ionicons name="body" size={35} color="white" />
                 <Text style={styles.Text}>
-                    Body Measurements
+                    Track Progress
                 </Text>
 
                 </View>

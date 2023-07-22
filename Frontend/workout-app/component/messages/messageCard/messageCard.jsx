@@ -5,7 +5,7 @@ const MessageCard =({item}) => {
 
 
     return (
-        <View style={styles.container}>
+        <TouchableOpacity style={styles.container}>
             <View style={styles.leftSide}>
                 <TouchableOpacity style={styles.imgContainer}>
                         <Image style={styles.img}
@@ -24,12 +24,34 @@ const MessageCard =({item}) => {
                 </View>
 
             </View>
+
+            <View style={styles.rigthSide}>
+                {!item.read ? (
+                    <View style={styles.numberContainer}>
+                    <Text style={styles.number}>
+                        4
+                    </Text>
+
+                </View>
+
+
+                ): (
+                    <View>
+                      
+                    </View>
+                )}
+    
+                <Text style={styles.date}>
+                    250
+                </Text>
+
+            </View>
             
 
 
 
 
-        </View>
+        </TouchableOpacity>
     )
 }
 

@@ -4,15 +4,12 @@ const screenWidth = Dimensions.get('window').width
 import {COLORS} from '../../../constants'
 
 const styles = StyleSheet.create({
-    items: {
 
-    },
    container: {
     backgroundColor: 'black',
     width: screenWidth /1.2,
     margin: screenWidth/12,
     padding: 30, 
-
     borderRadius: 20, 
     alignItems:'center',
     justifyContent: 'center',
@@ -34,7 +31,7 @@ const styles = StyleSheet.create({
     justifyContent:'center',
    },
    logocontainer:{
-    backgroundColor: 'black',
+
     borderRadius: 30,
     padding:10, 
    },

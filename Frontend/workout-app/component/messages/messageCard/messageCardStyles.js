@@ -10,6 +10,9 @@ const styles = StyleSheet.create({
         padding:10, 
         borderRadius:20, 
         marginBottom:5, 
+        borderBottomColor:COLORS.primary,
+        borderBottomWidth:2, 
+        justifyContent:'space-between'
 
     },
     leftSide : {
@@ -42,6 +45,34 @@ const styles = StyleSheet.create({
     messageText : {
         color:'white',
         fontSize: 11,
+
+    },
+    rigthSide: {
+        justifyContent:'space-between',
+        padding:5, 
+        alignItems:'center'
+
+    },
+    numberContainer: {
+        borderRadius:20, 
+        height:20,
+        width:20,
+        backgroundColor: COLORS.primary,
+        alignItems:'center',
+        justifyContent:'center',
+
+    },
+    number : {
+        fontSize:12,
+        fontWeight:600,
+        color:'white'
+
+    },
+    date : {
+        color:'white',
+        borderBottomColor:COLORS.primary, 
+        borderBottomWidth:1.5,
+        fontSize:13, 
 
     }
 

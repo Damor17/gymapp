@@ -2,6 +2,7 @@ import { View, Text, TouchableOpacity, Image} from "react-native";
 import styles from "./basicInfostyles";
 import { AntDesign } from '@expo/vector-icons'; 
 import { useRouter } from "expo-router";
+import FlipCard from 'react-native-flip-card'
 
 
 const BasicInfo = ({user}) => {
@@ -31,7 +32,11 @@ const BasicInfo = ({user}) => {
 
 
                 </View>
+
+
             </View>
+
+
 
     )
 }

@@ -30,11 +30,9 @@ const MessageHub = () => {
                 }}
                 />
 
-            <ScrollView>
-                <MessagesLayout />
 
+            <MessagesLayout />
 
-            </ScrollView>
             <Footer user= {user} />
         </SafeAreaView>
     )

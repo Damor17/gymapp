@@ -2,7 +2,6 @@ import { View, ScrollView, SafeAreaView, Text, Modal, TouchableOpacity} from "re
 import { useState } from "react";
 import { Stack, useRouter } from "expo-router";
 import {COLORS, icons, images, SIZES} from '../constants'
-import ScreenHeaderBtn from "../component/buttons/screenHeaderBtn";
 import Welcome from "../component/homepage/welcome/welcome";
 import Feed from "../component/homepage/feed/feed";
 import Footer from "../component/footer/footer";
@@ -16,19 +15,19 @@ import RootTabs from "../component/miscellaneous/rootTabs/rootTabs";
 const apiKey = 'qq6rvrmw9x3m'
 const cookies = new Cookies()
 
-const authToken = cookies.get("token");
+const authToken = true;
 const client = StreamChat.getInstance(apiKey)
 
 
-if(authToken) {
-    client.connectUser({
-        id: cookies.get('userId'),
-        name: cookies.get('username'),
-        fullName: cookies.get('fullName'),
-        hashedPassword: cookies.get('hashedPassword'),
-        phoneNumber: cookies.get('phoneNumber'),
-    }, authToken)
-}
+// if(authToken) {
+//     client.connectUser({
+//         id: cookies.get('userId'),
+//         name: cookies.get('username'),
+//         fullName: cookies.get('fullName'),
+//         hashedPassword: cookies.get('hashedPassword'),
+//         phoneNumber: cookies.get('phoneNumber'),
+//     }, authToken)
+// }
 
 
 
@@ -72,7 +71,6 @@ const Home = () => {
     
     return (
         <SafeAreaView style = {{flex:1, backgroundColor: 'black'}
-
         }>
             <Stack.Screen
                 options = {{
@@ -125,9 +123,6 @@ const Home = () => {
 
 
                 </View>
-
-                
-
             </Modal>
 
 

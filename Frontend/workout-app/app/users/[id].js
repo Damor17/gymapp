@@ -1,12 +1,19 @@
-import { View, Text, SafeAreaView, ScrollView, ActivityIndicator} from "react-native";
+import { SafeAreaView, ActivityIndicator, Modal} from "react-native";
 import { useSearchParams } from "expo-router";
 import { useState } from "react";
 import { Stack, useRouter } from "expo-router";
-import ProfileBack from "../../component/buttons/profileback";
+import FeedCard from "../../component/cards/FeedCard/feedCard";
+
+
 import FriendInfo from "../../component/friendprofile/friendinfo/friendinfo";
-import FriendFeed from "../../component/friendprofile/friendfeed/friendfeed";
-import { useEffect } from "react";
+import NoPosts from "../../component/friendprofile/noposts/noposts";
+import SelectInfo from "../../component/friendprofile/selectedinfo/selectedInfo";
+
+
+
 import GoBack from "../../component/buttons/goBackButton";
+import { ScrollView } from "react-native-gesture-handler";
+
 
 
 
@@ -68,7 +75,62 @@ const FriendProfile = () => {
             },
     
             ],
-            profilepic: "https://www.teksystems.com/-/media/teksystems/images/logos/teksystems-logo.svg?iar=0&rev=7059329eede9499a9965f7b1d91cc97f"
+            profilepic: "https://www.teksystems.com/-/media/teksystems/images/logos/teksystems-logo.svg?iar=0&rev=7059329eede9499a9965f7b1d91cc97f",
+            logs: [
+                {
+                    excersise: 'Bench Press',
+                    SetNReps: [
+                        {
+                            sets: 8,
+                            reps:8,
+                            weight: 155
+
+                        },
+
+                    ],
+                    date: 'July 4th'
+                },
+                {
+                    excersise: 'Bench Press',
+                    SetNReps: [
+                        {
+                            sets: 8,
+                            reps:8,
+                            weight: 155
+
+                        },
+
+                    ],
+                    date: 'July 10th'
+                },
+            ],
+            friends: [
+                {
+                    id:1,
+                    username:'El Chingon',
+                    profilePic: 'https://images.hdqwalls.com/download/anime-tokyo-ghoul-kaneki-ken-by-2048x2048.jpg',
+                },
+                {
+                    id:2,
+                    username:'El MR',
+                    profilePic:  "https://www.teksystems.com/-/media/teksystems/images/logos/teksystems-logo.svg?iar=0&rev=7059329eede9499a9965f7b1d91cc97f",
+                },
+
+            ],
+            achievements: [
+                {
+                    excersise: 'Bench Press',
+                    PR: 255,
+                    date: 'July 15th',
+                },
+                {
+                    excersise: 'Bench Press',
+                    PR: 210,
+                    date: 'July 10th',
+                }
+            ]
+
+
         },
         {
             id: 2,
@@ -121,7 +183,72 @@ const FriendProfile = () => {
             },
     
             ],
-            profilepic: 'https://images.hdqwalls.com/download/anime-tokyo-ghoul-kaneki-ken-by-2048x2048.jpg'
+            profilepic: 'https://images.hdqwalls.com/download/anime-tokyo-ghoul-kaneki-ken-by-2048x2048.jpg',
+            logs: [
+                {
+                    excersise: 'Bench Press',
+                    SetNReps: [
+                        {
+                            sets: 8,
+                            reps:8,
+                            weight: 155
+
+                        },
+
+                    ],
+                    date: 'July 4th'
+                },
+                {
+                    excersise: 'Bench Press',
+                    SetNReps: [
+                        {
+                            sets: 8,
+                            reps:8,
+                            weight: 155
+
+                        },
+                        {
+                            sets: 8,
+                            reps:8,
+                            weight: 155
+
+                        },
+                        {
+                            sets: 8,
+                            reps:8,
+                            weight: 155
+
+                        },
+
+                    ],
+                    date: 'July 10th'
+                },
+            ],
+            friends: [
+                {
+                    id:1,
+                    username:'El Chingon',
+                    profilePic:  'https://images.hdqwalls.com/download/anime-tokyo-ghoul-kaneki-ken-by-2048x2048.jpg',
+                },
+                {
+                    id:2,
+                    username:'El MR',
+                    profilePic:  "https://www.teksystems.com/-/media/teksystems/images/logos/teksystems-logo.svg?iar=0&rev=7059329eede9499a9965f7b1d91cc97f",
+                },
+
+            ],
+            achievements: [
+                {
+                    excersise: 'Bench Press',
+                    PR: 255,
+                    date: 'July 15th',
+                },
+                {
+                    excersise: 'Bench Press',
+                    PR: 210,
+                    date: 'July 10th',
+                }
+            ]
         },
         {
             id: 3,
@@ -129,17 +256,78 @@ const FriendProfile = () => {
             active: false, 
             biography: 'fasdjfaksjfklajslfkj;asfdk;sf;a',
             posts: [],
-            profilepic: "https://www.teksystems.com/-/media/teksystems/images/logos/teksystems-logo.svg?iar=0&rev=7059329eede9499a9965f7b1d91cc97f"
+            profilepic: "https://www.teksystems.com/-/media/teksystems/images/logos/teksystems-logo.svg?iar=0&rev=7059329eede9499a9965f7b1d91cc97f",
+            logs: [
+                {
+                    excersise: 'Bench Press',
+                    SetNReps: [
+                        {
+                            sets: 8,
+                            reps:8,
+                            weight: 155
+
+                        },
+
+                    ],
+                    date: 'July 4th'
+                },
+                {
+                    excersise: 'Bench Press',
+                    SetNReps: [
+                        {
+                            sets: 8,
+                            reps:8,
+                            weight: 155
+
+                        },
+
+                    ],
+                    date: 'July 10th'
+                },
+            ],
+            friends: [
+                {
+                    id:1,
+                    username:'El Chingon',
+                    profilePic:  'https://images.hdqwalls.com/download/anime-tokyo-ghoul-kaneki-ken-by-2048x2048.jpg',
+                },
+                {
+                    id:2,
+                    username:'El MR',
+                    profilePic:  "https://www.teksystems.com/-/media/teksystems/images/logos/teksystems-logo.svg?iar=0&rev=7059329eede9499a9965f7b1d91cc97f",
+                },
+
+            ],
+            achievements: [
+                {
+                    excersise: 'Bench Press',
+                    PR: 255,
+                    date: 'July 15th',
+                },
+                {
+                    excersise: 'Bench Press',
+                    PR: 210,
+                    date: 'July 10th',
+                }
+            ]
+            
         },
         
 
 
 
     ])
+    const [modal, setModal] = useState(false)
+    const [modalInfo, setModalInfo] = useState('Friends')
+    
+
     
     const friend = data.find(friend => (friend.id).toString() === id)
+    
 
-    if (!friend) {
+
+
+    if (!friend ) {
         return <ActivityIndicator />
     }
 
@@ -156,8 +344,37 @@ const FriendProfile = () => {
                     
                 }}
              />
-            <FriendInfo friend={friend}/>
-            <FriendFeed friend={friend}/>
+
+             <SelectInfo friend={friend} modalInfo={modalInfo} modal={modal} setModal={setModal}/>
+
+             
+            
+            <ScrollView keyboardShouldPersistTaps='handled'
+            nestedScrollEnabled={true}>
+                <FriendInfo modalInfo={modalInfo} setModalInfo={setModalInfo} modal={modal} setModal={setModal} friend={friend}/>
+
+                {friend.posts.length === 0 ? (
+                    <NoPosts/>
+                ): (
+                    <>
+                    {friend.posts.map((post, index) => (
+                        <FeedCard 
+                        item = {post}
+                        key ={index}
+                        />
+                    ))}
+                    </>
+
+                )}
+
+    
+                
+            
+
+            </ScrollView>
+    
+
+            
             
 
         </SafeAreaView>

@@ -44,8 +44,7 @@ const styles = StyleSheet.create({
     noUsersText : {
         color: 'white',
         fontSize:20, 
-        borderBottomWidth:1.5,
-        borderBottomColor: COLORS.primary
+
     }
 
   });

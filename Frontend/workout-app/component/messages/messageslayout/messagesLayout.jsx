@@ -2,6 +2,9 @@ import { View, Text, TextInput, FlatList} from "react-native";
 import styles from "./messagesLayoutStyles";
 import { useState } from "react";
 import MessageCard from "../messageCard/messageCard";
+import { useEffect } from "react";
+import FriendActiveCard from "../../cards/FriendActive/friendActiveCard";
+import HorizontalCard from "../horizontalCard/horizontalCard";
 
 
 const MessagesLayout = () => {
@@ -30,6 +33,16 @@ const MessagesLayout = () => {
 
 
     ])
+    const [searchResults, setSearchResults] = useState(data)
+
+    useEffect(() => {
+        const filteredResults = data.filter(item => ((item.username).toLowerCase()).includes(search.toLowerCase()) || ((item.lastmessage).toLowerCase()).includes(search.toLowerCase()))
+    
+        setSearchResults(filteredResults)
+
+      }, [data, search])
+
+    if (!searchResults) return <ActivityIndicator></ActivityIndicator>
 
 
     return (
@@ -40,15 +53,30 @@ const MessagesLayout = () => {
                     onChangeText={(text) => setSearch(text)}
                     placeholder="Search here..."
                     placeholderTextColor={'white'}/>
-            </View>
+        </View>
+                
 
-            
+
+            <View style={styles.horizontalContainer}>
+                <FlatList 
+                        data = {data}
+                        renderItem={({item}) => (
+                            <HorizontalCard 
+                                item = {item}
+                            />
+
+                        )}
+                        horizontal={true}
+                        showsHorizontalScrollIndicator={false}     
+                />
+            </View>
 
 
 
             <View style={styles.flatListContainer}>
                 <FlatList 
-                    data = {data}
+                    data = {searchResults}
+                    showsVerticalScrollIndicator ={false}
                     renderItem={({item}) => (
                         <MessageCard
                             item = {item}
@@ -56,11 +84,7 @@ const MessagesLayout = () => {
                         />
 
                     )} />
-
-
-
             </View>
-
 
 
         </View>

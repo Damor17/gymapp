@@ -75,11 +75,11 @@ const Posts = ( ) => {
                     headerTitle: ""
                 }}
             />
-            <ScrollView>
-                <PostsHeader/>
-                <SelfFeed />
 
-            </ScrollView>
+            <PostsHeader/>
+            <SelfFeed />
+
+
 
         </SafeAreaView>
     )

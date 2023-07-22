@@ -21,11 +21,18 @@ const styles = StyleSheet.create({
 
     },
     flatListContainer: {
-        backgroundColor:COLORS.primary,
+        backgroundColor:'black',
         marginTop:20, 
         padding:10, 
-        minHeight: screenHeight,
+        minHeight: screenHeight/1.6,
 
+    },
+    horizontalContainer: { 
+        backgroundColor:COLORS.primary,
+        padding:10, 
+        marginTop:15, 
+        minHeight:140, 
+        borderRadius:5, 
     }
  
 });

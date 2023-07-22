@@ -9,9 +9,9 @@ import { useState } from "react";
 const BodyStats = () => {
     const [data, setData] = useState(
         {
-            height: '5"7',
-            weight: '110',
-            bpm: '124',
+            height: '',
+            weight: '',
+            bpm: '',
         }
 
     )
@@ -70,7 +70,7 @@ const BodyStats = () => {
                                 onBlur={() => handleSumbit('weight', weight)}
                                 ></TextInput>
                                 <TouchableOpacity style={styles.logocontainer} onPress={() => handleSumbit('weight', weight)}>
-                                    <FontAwesome5 name="weight" size={15} color="white" />
+                                    <FontAwesome5 name="weight" size={24} color="white" />
                                 </TouchableOpacity>
                             </View>
         
@@ -79,7 +79,7 @@ const BodyStats = () => {
                             <View style={styles.weight}> 
                                 <Text style={styles.weightText}> {data.weight} lbs</Text>
                                 <TouchableOpacity style={styles.logocontainer} onPress={toggleBlock}>
-                                    <FontAwesome5 name="weight" size={15} color="white" />
+                                    <FontAwesome5 name="weight" size={24} color="white" />
 
                                 </TouchableOpacity>
                             </View>
@@ -120,7 +120,6 @@ const BodyStats = () => {
                                     <Text style={styles.heightText}> {data.height[0]}"{data.height[1]}</Text>
                                     <TouchableOpacity onPress={toggleBlockheight}>
                                         <MaterialCommunityIcons name="human-male-height" size={24} color="white" />
-
                                     </TouchableOpacity>
                                 </View>
 

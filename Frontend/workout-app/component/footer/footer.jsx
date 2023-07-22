@@ -13,7 +13,7 @@ const Footer = ({user}) => {
     return (
         <View  style= {styles.container}>
             <TouchableOpacity style={styles.btnContainer}
-            onPress={() => router.push(`/addworkout`)}>
+            onPress={() => router.push(`/add/hub`)}>
                 <AntDesign name="pluscircle" color="white" size={30} />
             </TouchableOpacity>
             <TouchableOpacity style={styles.btnContainer}

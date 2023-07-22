@@ -1,30 +1,34 @@
-import { Text, View, Image, TouchableOpacity} from "react-native"
+import { Text, View, Image, TouchableOpacity, ActivityIndicator} from "react-native"
 import styles from "./feedcardstyles"
 import { useState } from "react"
+import { useRouter } from "expo-router"
+import { useSearchParams } from "expo-router"
 
 const FeedCard = ({item}) => {
     const [expanded, setExpanded] = useState(false)
+    const router= useRouter()
 
     const toggleBlock = () => {
         setExpanded(!expanded)
     }
-    
 
+    //onPress={() => router.push(`/users/${item.id}`)}
 
     return (
         <View style={{borderBottomColor: 'darkgrey',
         borderBottomWidth: 3,}} >
-            <View style={styles.topimage}>
+            <TouchableOpacity style={styles.topimage} >
                 <Image style={styles.profilepic}
                 source={{uri: item.profilePic}}
                 resizeMode='contain'
                 />
                 <Text style={styles.textcolor}>{item.username}</Text>
-            </View>
+            </TouchableOpacity>
+
+
             <Image 
                 style={styles.mainImage}
                 source={{uri: item.image}}
-
 
             />
             <View style={styles.bottomImage}>

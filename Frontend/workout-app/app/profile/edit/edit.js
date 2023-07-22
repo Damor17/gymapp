@@ -3,6 +3,7 @@ import { Stack } from "expo-router";
 import ProfilePic from "../../../component/profile/edit/editprofilepic/profilePic";
 import EditForm from "../../../component/profile/edit/editform/editForm";
 import ProfileBack from "../../../component/buttons/profileback";
+import GoBack from "../../../component/buttons/goBackButton";
 
 const Edit= () => {
     const user ={
@@ -19,11 +20,7 @@ const Edit= () => {
                     headerStyle : {backgroundColor: 'black'},
                     headerShadowVisible: false,
                     headerLeft: () => (
-                        <ProfileBack
-                        place = {'/'}
-                        
-
-                        />
+                        <GoBack />
                     ),
 
                     headerTitle: ""

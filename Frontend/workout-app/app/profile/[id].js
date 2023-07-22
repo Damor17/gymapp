@@ -6,6 +6,7 @@ import ProfileBack from "../../component/buttons/profileback";
 import BasicInfo from "../../component/profile/BasicInfo/basicInfo";
 import Tabs from "../../component/profile/tabs/tabs";
 import Footer from "../../component/footer/footer";
+import LiftCard from "../../component/profile/BasicInfo/cardinfo";
 
 
 
@@ -86,12 +87,13 @@ const Profile = () => {
                     headerTitle: ""
                 }}
             />
-            <BasicInfo user={user}/>
+
             <ScrollView 
             showsVerticalScrollIndicator={false}>
+                 <LiftCard style={{flex:1, }}user={user}/>
                 <Tabs user={user}/>
-
             </ScrollView>
+            
             <Footer user={user}/>
 
         </SafeAreaView>
