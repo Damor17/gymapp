@@ -5,10 +5,11 @@ import FriendsView from "./friends/friends";
 import AchievementsView from "./achievements/achieve";
 
 
-const SelectInfo = ({friend, modalInfo, modal, setModal}) => {
+const SelectInfo = ({color, friend, modalInfo, modal, setModal}) => {
 
     let modalInformation = 'yur'
 
+    console.log(friend.friends)
 
     if (modalInfo === 'Friends') {
         modalInformation = friend.friends
@@ -29,21 +30,21 @@ const SelectInfo = ({friend, modalInfo, modal, setModal}) => {
         <Modal visible={modal} transparent animation="slide">
             <View style={{ flex:1, justifyContent: 'center',
             alignItems: 'center', backgroundColor:'rgba(0,0,0,0.5)'}}>
-                <View style={{backgroundColor:'purple', padding:15, width:'90%', borderRadius:20,}}>
+                <View style={{backgroundColor:color, padding:15, width:'90%', borderRadius:20,}}>
                     <View style={{paddingBottom:15, }}>
                         <AntDesign name="close" size={28} color="black" onPress={() => setModal(!modal)} />
                     </View>
                     <View>
                         {modalInfo === 'Friends'? (
                             <View>
-                            <FriendsView modalInformation={modalInformation} />
+                            <FriendsView color={color} modalInformation={modalInformation} />
                         </View>
 
                         ) : modalInfo === 'Logs' ? (
-                            <LogsView modalInformation={modalInformation}/>
+                            <LogsView modalInformation={modalInformation} color={color}/>
 
                         ) : modalInfo === 'Achievements'? (
-                            <AchievementsView  modalInformation={modalInformation}/>
+                            <AchievementsView  color={color} modalInformation={modalInformation}/>
 
                         ): (
                             <View>

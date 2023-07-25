@@ -12,7 +12,7 @@ const styles = StyleSheet.create({
     formContainer: {
         backgroundColor:'black',
         padding:10, 
-        borderRadius:20, 
+        borderRadius:30, 
         paddingBottom:20,
     },
     headerContainer: {
@@ -25,19 +25,21 @@ const styles = StyleSheet.create({
     headerText: {
         color:'white',
         fontSize:24, 
+        borderRadius:20,
     },
     titleContainer: {
-        padding:10,
+        padding:5,
+        marginBottom:10,
+        borderRadius:20,
     },
     titleText: {
         color:'white',
-        fontSize:20,
-        backgroundColor:'black',
-        padding:10,
+        fontSize:16,
+        padding:8, 
         borderRadius:20, 
     },
     underlineTextContainer: {
-        backgroundColor:COLORS.primary,
+        backgroundColor:'black',
         borderRadius:20, 
         padding:2,
         flexWrap: 'wrap',
@@ -47,6 +49,7 @@ const styles = StyleSheet.create({
         color:'white',
         padding:10,
         borderRadius:20,
+        fontSize:12,
         borderBottomColor:COLORS.primary,
         borderBottomWidth:2,
         marginBottom:20,

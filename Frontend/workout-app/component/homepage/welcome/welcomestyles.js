@@ -9,7 +9,7 @@ const styles = StyleSheet.create({
   userName: {
     fontFamily: FONT.regular,
     fontSize: SIZES.large,
-    color: COLORS.secondary,
+    color: 'white'
   },
   welcomeMessage: {
     fontFamily: FONT.bold,

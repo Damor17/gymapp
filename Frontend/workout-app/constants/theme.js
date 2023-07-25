@@ -1,13 +1,10 @@
 const COLORS = {
     primary: "rgb(255, 0, 102)",
-    secondary: "rgb(255, 255, 255)",
+    secondary: "purple",
     tertiary: "rgb(196, 8, 83)",
-  
     gray: "#83829A",
     gray2: "#C1C0C8",
-
     darkgray: 'rgb(56, 56, 56)',
-  
     white: "#F3F4F8",
     lightwhite: "#FAFAFC",
   };

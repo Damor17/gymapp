@@ -1,6 +1,6 @@
 import { Text, TouchableOpacity, SafeAreaView} from "react-native"
 import { Stack } from "expo-router"
-import ProfileBack from "../../../component/buttons/profileback"
+import GoBack from "../../../component/buttons/goBackButton"
 import { ScrollView } from "react-native-gesture-handler"
 import PostsHeader from "../../../component/posts/postsheader/postsHeader"
 import SelfFeed from "../../../component/posts/selfFeed/selfFeed"
@@ -68,9 +68,7 @@ const Posts = ( ) => {
                     headerStyle : {backgroundColor: 'black'},
                     headerShadowVisible: false,
                     headerLeft: () => (
-                        <ProfileBack
-                        place = {`/profile/${user.id}`}
-                        />
+                        <GoBack />
                     ),
                     headerTitle: ""
                 }}

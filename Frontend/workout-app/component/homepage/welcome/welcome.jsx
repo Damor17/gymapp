@@ -5,30 +5,7 @@ import { useState } from "react"
 import FriendActiveCard from "../../cards/FriendActive/friendActiveCard"
 
 const Welcome = ({user}) => {
-    const [data, setData] =  useState([
-        {
-            id: 1,
-            username: 'Mr.Beans',
-            active: false, 
-            image: "https://www.teksystems.com/-/media/teksystems/images/logos/teksystems-logo.svg?iar=0&rev=7059329eede9499a9965f7b1d91cc97f"
-        },
-        {
-            id: 2,
-            username: 'SHinyMan',
-            active: true, 
-            image: 'https://images.hdqwalls.com/download/anime-tokyo-ghoul-kaneki-ken-by-2048x2048.jpg'
-        },
-        {
-            id: 3,
-            username: 'Thebesterlolste',
-            active: false, 
-            image: "https://www.teksystems.com/-/media/teksystems/images/logos/teksystems-logo.svg?iar=0&rev=7059329eede9499a9965f7b1d91cc97f"
-        },
-        
-
-
-
-    ])
+    const data = user.friends
 
     const sayings = [
     "Never Gon Give You Up...",

@@ -15,7 +15,7 @@ const initialState = {
     username: '',
     password: '',
     confirmPassword: '',
-    phoneNumber: '',
+    Email: '',
 }
 
 
@@ -30,34 +30,48 @@ const Auth = () => {
         setForm({... form, [section]: text})
     }
 
-    const handleSumbit = async() => {
-        const { username, password, phoneNumber} = form;
+    // const handleSumbit = async() => {
+    //     const { username, password, phoneNumber} = form;
 
+    //     const URL = 'http://localhost:5000/auth';
+
+    //     try {
+    //         const { data: { token, userId, hashedPassword, fullName } } = await axios.post(`${URL}/${isSignUp ? 'signup' : 'login'}`, {
+    //             username, password, fullName: form.fullName, phoneNumber
+    //         });
+    
+    //         cookies.set('token', token);
+    //         cookies.set('username', username);
+    //         cookies.set('fullName', fullName);
+    //         cookies.set('userId', userId);
+    
+    //         if(isSignUp) {
+    //             cookies.set('phoneNumber', phoneNumber);
+    //             cookies.set('hashedPassword', hashedPassword);
+    //         }
+
+        
+    //         window.location.reload();
+
+    //     } catch(er) {
+    //         console.log(er.response.data)
+
+    //     } 
+        
+
+    // }
+
+    const handleSumbit = async() => {
+        const {username, password, confirmPassword, phoneNumber} = form
+
+        console.log(username, password)
         const URL = 'http://localhost:5000/auth';
 
-        try {
-            const { data: { token, userId, hashedPassword, fullName } } = await axios.post(`${URL}/${isSignUp ? 'signup' : 'login'}`, {
-                username, password, fullName: form.fullName, phoneNumber
-            });
-    
-            cookies.set('token', token);
-            cookies.set('username', username);
-            cookies.set('fullName', fullName);
-            cookies.set('userId', userId);
-    
-            if(isSignUp) {
-                cookies.set('phoneNumber', phoneNumber);
-                cookies.set('hashedPassword', hashedPassword);
-            }
 
-        
-            window.location.reload();
 
-        } catch(er) {
-            console.log(er.response.data)
 
-        } 
-        
+
+
 
     }
 
@@ -140,14 +154,14 @@ const Auth = () => {
                             <View style={styles.formTabs}>
                                 <View style={styles.formHeaderContainer}>
                                     <Text style={styles.formHeader}>
-                                    Phone Number
+                                    Email
                                 </Text>
                                 </View>
 
                                 <TextInput
                                 style={styles.formInput}
-                                onChangeText={(text)=> handleChange('phoneNumber', text)}
-                                placeholder="Enter Phone Number..."
+                                onChangeText={(text)=> handleChange('Email', text)}
+                                placeholder="Enter Email..."
                                
                                 />
                             </View>

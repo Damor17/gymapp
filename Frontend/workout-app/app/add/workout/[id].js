@@ -1,12 +1,15 @@
 import { SafeAreaView, ScrollView, ActivityIndicator } from "react-native";
 import { Stack } from "expo-router";
+import { useState } from "react";
 import GoBack from "../../../component/buttons/goBackButton";
 import { useSearchParams } from "expo-router";
 import Rec from "../../../component/add/typeworkout/recommonded/recommended";
 import WorkoutForm from "../../../component/add/typeworkout/form/form";
+import Submit from "../../../component/add/addpost/submit/submit";
 
 
 const Type = () => {
+    const [data, setData] = useState([]) //Always empty data for the day
     const {id} = useSearchParams();
     let muscleGroups = []
 
@@ -49,9 +52,14 @@ const Type = () => {
                 }}
             />
             <ScrollView>
-                <WorkoutForm />
+                <WorkoutForm data={data} setData = {setData} />
                 <Rec muscleGroups={muscleGroups} type={id}/>
             </ScrollView>
+            <Submit 
+             initialState={[]}
+             form={data} setForm={setData}
+            />
+
         </SafeAreaView>
     )
 }

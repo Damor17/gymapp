@@ -1,6 +1,6 @@
 import { Text, TouchableOpacity, View, ScrollView, SafeAreaView} from "react-native"
 import { Stack } from "expo-router"
-import ProfileBack from "../../../component/buttons/profileback"
+import GoBack from "../../../component/buttons/goBackButton"
 import { LinearGradient } from "expo-linear-gradient"
 import BodyStats from "../../../component/body/bodystats/bodystats"
 import {COLORS} from '../../../constants'
@@ -141,10 +141,7 @@ const BodyMe = ( ) => {
                         headerStyle : {backgroundColor: 'black'},
                         headerShadowVisible: false,
                         headerLeft: () => (
-                            <ProfileBack
-                            place = {`/profile/${user.id}`}
-
-                            />
+                            <GoBack/>
                         ),
                         headerTitle: ""
                     }}

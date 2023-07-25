@@ -1,12 +1,14 @@
 import { SafeAreaView, ScrollView} from "react-native";
 import { Stack, useRouter } from "expo-router";
+import {COLORS} from '../../constants'
 
 import { useSearchParams } from "expo-router";
 import ProfileBack from "../../component/buttons/profileback";
-import BasicInfo from "../../component/profile/BasicInfo/basicInfo";
+import { useState } from "react";
 import Tabs from "../../component/profile/tabs/tabs";
 import Footer from "../../component/footer/footer";
 import LiftCard from "../../component/profile/BasicInfo/cardinfo";
+import SelectInfo from "../../component/friendprofile/selectedinfo/selectedInfo";
 
 
 
@@ -64,8 +66,65 @@ const Profile = () => {
         },
 
         ],
-        biography: "Hello, I want to become the very best that no one everwas           carpdeim"
+        biography: "Hello, I want to become the very best that no one everwas           carpdeim",
+        logs: [
+            {
+                excersise: 'Bench Press',
+                SetNReps: [
+                    {
+                        sets: 8,
+                        reps:8,
+                        weight: 155
+
+                    },
+
+                ],
+                date: 'July 4th'
+            },
+            {
+                excersise: 'Bench Press',
+                SetNReps: [
+                    {
+                        sets: 8,
+                        reps:8,
+                        weight: 155
+
+                    },
+
+                ],
+                date: 'July 10th'
+            },
+        ],
+        friends: [
+            {
+                id:1,
+                username:'El Baby',
+                profilepic: 'https://images.hdqwalls.com/download/anime-tokyo-ghoul-kaneki-ken-by-2048x2048.jpg',
+            },
+            {
+                id:2,
+                username:'El MR',
+                profilepic:  "https://www.teksystems.com/-/media/teksystems/images/logos/teksystems-logo.svg?iar=0&rev=7059329eede9499a9965f7b1d91cc97f",
+            },
+
+        ],
+        achievements: [
+            {
+                excersise: 'Bench Press',
+                PR: 255,
+                date: 'July 15th',
+            },
+            {
+                excersise: 'Bench Press',
+                PR: 210,
+                date: 'July 10th',
+            }
+        ]
     }
+
+    
+    const [modal, setModal] = useState(false)
+    const [modalInfo, setModalInfo] = useState('Friends')
 
 
 
@@ -87,10 +146,16 @@ const Profile = () => {
                     headerTitle: ""
                 }}
             />
+            <SelectInfo
+            color={COLORS.primary}
+            friend={user} modalInfo={modalInfo} modal={modal} setModal={setModal}
+             />
 
             <ScrollView 
             showsVerticalScrollIndicator={false}>
-                 <LiftCard style={{flex:1, }}user={user}/>
+                 <LiftCard style={{flex:1, }} 
+                 modalInfo={modalInfo} setModalInfo={setModalInfo} modal={modal} setModal={setModal}
+                 user={user}/>
                 <Tabs user={user}/>
             </ScrollView>
             

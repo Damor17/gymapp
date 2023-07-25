@@ -9,7 +9,7 @@ const screenHeight= Dimensions.get('window').height
 
 
 
-const Searcher = () => {
+const Searcher = ({friends, setFriends, user}) => {
     const [search, setSearch] = useState('')
     const [searchResults, setSearchResults] = useState(data)
     const [data, setData] =  useState([
@@ -134,15 +134,18 @@ const Searcher = () => {
     ])
 
 
+
     useEffect(() => {
         const filteredResults = data.filter(item => ((item.username).toLowerCase()).includes(search.toLowerCase()))
     
         setSearchResults(filteredResults)
-        console.log(searchResults)
+
     
       }, [data, search])
 
     if (!searchResults) return <ActivityIndicator></ActivityIndicator>
+
+
 
 
     return (
@@ -170,6 +173,8 @@ const Searcher = () => {
                         data = {searchResults}
                         renderItem={({item}) => (
                             <SearchCard
+                           friends={friends} setFriends={setFriends}
+                                user = {user}
                                 item = {item}
                                 keyExtractor={(item) => item.username}
                             />

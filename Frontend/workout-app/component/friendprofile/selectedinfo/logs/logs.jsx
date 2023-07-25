@@ -3,13 +3,13 @@ import { View, Text, ActivityIndicator, ScrollView} from "react-native";
 
 
 
-const LogsView = ({modalInformation}) => {
+const LogsView = ({modalInformation, color}) => {
 
     return (
 
         <View style={{backgroundColor:'black', borderRadius:20, padding:10,  }}>
 
-            <View style={{alignItems:'center', borderBottomColor:'purple', padding:2, borderBottomWidth:2, paddingBottom:5.  }}>
+            <View style={{alignItems:'center', borderBottomColor:color, padding:2, borderBottomWidth:2, paddingBottom:5.  }}>
                 <View >
                     <Text style={{color:'white', fontSize:26,}}>Logs</Text>
                 </View>
@@ -21,7 +21,7 @@ const LogsView = ({modalInformation}) => {
 
 
                     <View> 
-                        <View style ={{borderBottomColor:'purple', borderBottomWidth:1, flexWrap: 'wrap', alignSelf: 'flex-start', padding:2, }}>
+                        <View style ={{borderBottomColor:color, borderBottomWidth:1, flexWrap: 'wrap', alignSelf: 'flex-start', padding:2, }}>
                             <Text style={{color:'white', fontSize:20, }}>{log.date}</Text>
                         </View>  
                     </View>
@@ -42,7 +42,7 @@ const LogsView = ({modalInformation}) => {
                                     {log.SetNReps.map((obj, index)=> (
                                     <View style={{flexDirection:'row',}} key={index}>
                                         <View style={{alignItems:'center',marginLeft:42}}>
-                                            <View style={{borderBottomColor:'purple', borderBottomWidth:1.5}}>
+                                            <View style={{borderBottomColor:color, borderBottomWidth:1.5}}>
                                                 <Text style={{color:'white'}}> Sets</Text>
 
                                             </View>
@@ -51,7 +51,7 @@ const LogsView = ({modalInformation}) => {
                                         </Text>
                                         </View>
                                         <View style={{alignItems:'center',marginLeft:14}}>
-                                            <View style={{borderBottomColor:'purple', borderBottomWidth:1.5}}>
+                                            <View style={{borderBottomColor:color, borderBottomWidth:1.5}}>
                                                 <Text style={{color:'white'}}> Reps</Text>
 
                                             </View>
@@ -60,7 +60,7 @@ const LogsView = ({modalInformation}) => {
                                         </Text>
                                         </View>
                                         <View style={{alignItems:'center', marginLeft:14}}>
-                                            <View style={{borderBottomColor:'purple', borderBottomWidth:1.5}}>
+                                            <View style={{borderBottomColor:color, borderBottomWidth:1.5}}>
                                                 <Text style={{color:'white'}}> Weight</Text>
 
                                             </View>

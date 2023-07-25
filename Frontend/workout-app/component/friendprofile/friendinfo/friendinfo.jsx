@@ -10,7 +10,7 @@ import { FontAwesome } from '@expo/vector-icons';
 
 
 
-const FriendInfo = ({modalInfo, setModalInfo, modal, setModal, friend}) => {
+const FriendInfo = ({ setModalInfo, modal, setModal, friend}) => {
     const handlePress = (type) => {
         setModal(!modal)
         setModalInfo(type)

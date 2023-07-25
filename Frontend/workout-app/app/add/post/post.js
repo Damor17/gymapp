@@ -43,13 +43,13 @@ const AddPost = () => {
             <ScrollView>
                 <Form
                 handleChange= {handleChange}
-                
                 />
                 <AddImage 
                 handleChange={handleChange}
                 />
             </ScrollView>
 
+            
             <Submit  
             initialState={initialState}
             form={form} setForm={setForm}/>

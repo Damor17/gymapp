@@ -1,6 +1,6 @@
 import { Text, TouchableOpacity, SafeAreaView, ScrollView} from "react-native"
 import { Stack, useRouter } from "expo-router";
-import ProfileBack from "../../../component/buttons/profileback";
+import GoBack from "../../../component/buttons/goBackButton";
 import {COLORS} from '../../../constants'
 import InfoGoals from "../../../component/goals/infogoals/infogoals";
 
@@ -70,9 +70,7 @@ const Goals = ( ) => {
                     headerStyle : {backgroundColor: 'black'},
                     headerShadowVisible: false,
                     headerLeft: () => (
-                        <ProfileBack
-                        place = {`/profile/${user.id}`}
-                        />
+                        <GoBack />
                     ),
                     headerTitle: ""
 

@@ -9,10 +9,7 @@ const styles = StyleSheet.create({
         padding:10,
     },
     headerContainer: {
-        padding:4, 
-        alignItems:'center',
-        borderBottomColor:'purple',
-        borderBottomWidth:2, 
+
 
     },
     headerText: {

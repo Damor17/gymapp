@@ -22,8 +22,9 @@ const BodyInfo = ({user}) => {
             </TouchableOpacity>
             {!logView ? (
                 <ProgressGraph />
+
             ): (
-                <LogsView modalInformation={user.logs}/>
+                <LogsView modalInformation={user.logs} color={COLORS.primary}/>
             )}
 
 

@@ -11,33 +11,16 @@ import FriendActiveCard from '../../cards/FriendActive/friendActiveCard'
 import { useState } from 'react'
 
 
-const LiftCard = ({user}) => {
+const LiftCard = ({modal, setModal, setModalInfo, user}) => {
     const router = useRouter()
 
-    const [data, setData] =  useState([
-        {
-            id: 1,
-            username: 'Mr.Beans',
-            active: false, 
-            image: "https://www.teksystems.com/-/media/teksystems/images/logos/teksystems-logo.svg?iar=0&rev=7059329eede9499a9965f7b1d91cc97f"
-        },
-        {
-            id: 2,
-            username: 'SHinyMan',
-            active: true, 
-            image: 'https://images.hdqwalls.com/download/anime-tokyo-ghoul-kaneki-ken-by-2048x2048.jpg'
-        },
-        {
-            id: 3,
-            username: 'Thebesterlolste',
-            active: false, 
-            image: "https://www.teksystems.com/-/media/teksystems/images/logos/teksystems-logo.svg?iar=0&rev=7059329eede9499a9965f7b1d91cc97f"
-        },
-        
+    const data = user.friends
 
+    const handlePress = (type) => {
+        setModal(!modal)
+        setModalInfo(type)
+    }
 
-
-    ])
 
     return (
         <FlipCard 
@@ -81,13 +64,14 @@ const LiftCard = ({user}) => {
 
                     </View>
                     <View style={styles.frontSideRight}>
-                        <TouchableOpacity style={styles.frontSideBtn}>
+                        <TouchableOpacity style={styles.frontSideBtn} onPress={() => handlePress('Achievements')}
+                        >
                             <FontAwesome5 name="medal" size={36} color={COLORS.primary} />
                         </TouchableOpacity>
-                        <TouchableOpacity style={styles.frontSideBtn}>
+                        <TouchableOpacity style={styles.frontSideBtn} onPress={() => handlePress('Logs')}>
                             <FontAwesome name="list" size={38} color={'white'} />
                         </TouchableOpacity>
-                        <TouchableOpacity style={styles.frontSideBtn}>
+                        <TouchableOpacity style={styles.frontSideBtn} onPress={() => handlePress('Friends')}>
                             <FontAwesome5 name="user-friends" size={36} color={COLORS.primary}/>
                         </TouchableOpacity>
 

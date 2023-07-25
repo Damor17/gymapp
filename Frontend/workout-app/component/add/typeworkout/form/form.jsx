@@ -5,9 +5,7 @@ import { Ionicons } from '@expo/vector-icons';
 import {COLORS} from '../../../../constants'
 import ExcersiseCard from "./excersise card/excersiseCard";
 
-const initialStateData = [
-   
-]
+
 
 const initialStateForm = {
     excersise: '',
@@ -23,8 +21,9 @@ const emptyStats = {
 
 }
 
-const WorkoutForm = () => {
-    const [data, setData] = useState(initialStateData)
+
+
+const WorkoutForm = ({data, setData}) => {
     const [add, setAdd] = useState(false)
     const [addInfo, setAddInfo] = useState(false)
     const [form, setForm] = useState(initialStateForm) // form includes excersise name and weights n stuff
@@ -59,6 +58,8 @@ const WorkoutForm = () => {
         setNums([])
         setForm(initialStateForm)
     }
+
+    console.log(data)
 
 
     return (

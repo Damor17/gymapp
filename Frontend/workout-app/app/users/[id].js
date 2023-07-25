@@ -108,12 +108,22 @@ const FriendProfile = () => {
                 {
                     id:1,
                     username:'El Chingon',
-                    profilePic: 'https://images.hdqwalls.com/download/anime-tokyo-ghoul-kaneki-ken-by-2048x2048.jpg',
+                    profilepic: 'https://images.hdqwalls.com/download/anime-tokyo-ghoul-kaneki-ken-by-2048x2048.jpg',
                 },
                 {
                     id:2,
                     username:'El MR',
-                    profilePic:  "https://www.teksystems.com/-/media/teksystems/images/logos/teksystems-logo.svg?iar=0&rev=7059329eede9499a9965f7b1d91cc97f",
+                    profilepic:  "https://www.teksystems.com/-/media/teksystems/images/logos/teksystems-logo.svg?iar=0&rev=7059329eede9499a9965f7b1d91cc97f",
+                },
+                {
+                    id:3,
+                    username:'El Chingon',
+                    profilepic: 'https://images.hdqwalls.com/download/anime-tokyo-ghoul-kaneki-ken-by-2048x2048.jpg',
+                },
+                {
+                    id:4,
+                    username:'El Chingon',
+                    profilepic: 'https://images.hdqwalls.com/download/anime-tokyo-ghoul-kaneki-ken-by-2048x2048.jpg',
                 },
 
             ],
@@ -228,12 +238,12 @@ const FriendProfile = () => {
                 {
                     id:1,
                     username:'El Chingon',
-                    profilePic:  'https://images.hdqwalls.com/download/anime-tokyo-ghoul-kaneki-ken-by-2048x2048.jpg',
+                    profilepic:  'https://images.hdqwalls.com/download/anime-tokyo-ghoul-kaneki-ken-by-2048x2048.jpg',
                 },
                 {
                     id:2,
                     username:'El MR',
-                    profilePic:  "https://www.teksystems.com/-/media/teksystems/images/logos/teksystems-logo.svg?iar=0&rev=7059329eede9499a9965f7b1d91cc97f",
+                    profilepic:  "https://www.teksystems.com/-/media/teksystems/images/logos/teksystems-logo.svg?iar=0&rev=7059329eede9499a9965f7b1d91cc97f",
                 },
 
             ],
@@ -289,12 +299,12 @@ const FriendProfile = () => {
                 {
                     id:1,
                     username:'El Chingon',
-                    profilePic:  'https://images.hdqwalls.com/download/anime-tokyo-ghoul-kaneki-ken-by-2048x2048.jpg',
+                    profilepic:  'https://images.hdqwalls.com/download/anime-tokyo-ghoul-kaneki-ken-by-2048x2048.jpg',
                 },
                 {
                     id:2,
                     username:'El MR',
-                    profilePic:  "https://www.teksystems.com/-/media/teksystems/images/logos/teksystems-logo.svg?iar=0&rev=7059329eede9499a9965f7b1d91cc97f",
+                    profilepic:  "https://www.teksystems.com/-/media/teksystems/images/logos/teksystems-logo.svg?iar=0&rev=7059329eede9499a9965f7b1d91cc97f",
                 },
 
             ],
@@ -345,7 +355,7 @@ const FriendProfile = () => {
                 }}
              />
 
-             <SelectInfo friend={friend} modalInfo={modalInfo} modal={modal} setModal={setModal}/>
+             <SelectInfo color={'purple'}friend={friend} modalInfo={modalInfo} modal={modal} setModal={setModal}/>
 
              
             
@@ -367,8 +377,7 @@ const FriendProfile = () => {
 
                 )}
 
-    
-                
+
             
 
             </ScrollView>
